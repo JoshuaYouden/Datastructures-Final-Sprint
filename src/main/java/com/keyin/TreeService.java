@@ -1,12 +1,12 @@
 package com.keyin;
 
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class TreeService {
@@ -16,22 +16,14 @@ public class TreeService {
     @Autowired
     TreeStructureRepository treeStructureRepository;
 
-    public List<TreeRecord> findAllTrees() {
-        return (List<TreeRecord>) treeRepository.findAll();
-    }
-
-    public Optional<TreeRecord> findTreeById(long id) {
-        return treeRepository.findById(id);
-    }
-
     public TreeNode createTree(List<Integer> numbers) {
         TreeNode root = null;
         for (int number : numbers) {
             root = insertRec(root, number);
         }
-        TreeNodeRepository.save(root);
+        treeRepository.save(root);
         String[] jsons = convertTreeToJson(root, numbers);
-        saveTreeJson(jsons[0], jsons[1])
+        saveTreeJson(jsons[0], jsons[1]);
         return root;
     }
 
@@ -44,6 +36,13 @@ public class TreeService {
         } else if (value > root.getValue()) {
     }
         return root;
+    }
+
+    private String[] convertTreeToJson(TreeNode root, List<Integer> numbers) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String treeJson = gson.toJson(root);
+        String userInputsJson = gson.toJson(numbers);
+        return new String[]{treeJson, userInputsJson};
     }
 
     private void saveTreeJson(String treeJson, String userInputsJson) {
