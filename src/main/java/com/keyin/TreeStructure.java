@@ -7,20 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-
-
 public class TreeStructure {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 5000)
+    @Column(name = "tree_json", columnDefinition = "TEXT", nullable = false)
     private String treeJson;
 
+    @Column(name="input_numbers", nullable = false)
     private String userInputs;
+    
 
     public TreeStructure(String treeJson, String userInputs) {
-
         this.treeJson = treeJson;
         this.userInputs = userInputs;
     }
@@ -37,12 +36,12 @@ public class TreeStructure {
         this.treeJson = treeJson;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserInputs() {
