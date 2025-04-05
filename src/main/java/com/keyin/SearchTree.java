@@ -8,7 +8,7 @@ public class SearchTree {
     }
 
     void insert(int value) {
-        root = insertRec(root,value);
+        root = insertRec(root, value);
 
     }
 

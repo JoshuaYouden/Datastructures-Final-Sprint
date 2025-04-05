@@ -38,10 +38,10 @@ public class TreeController {
         }
     }
 
-    @GetMapping("/preview-trees")
-    public String previewTrees(Model model) {
+    @GetMapping("/previous-trees")
+    public String previousTrees(Model model) {
         List<TreeStructure> allTrees = treeService.getPreviousTreeJson();
         model.addAttribute("trees", allTrees);
-        return "preview-trees";
+        return "previous-trees";
     }
 }

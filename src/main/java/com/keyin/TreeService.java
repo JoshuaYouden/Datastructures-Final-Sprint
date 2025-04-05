@@ -1,6 +1,9 @@
 package com.keyin;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,32 +20,31 @@ public class TreeService {
     TreeStructureRepository treeStructureRepository;
 
     public TreeNode createTree(List<Integer> numbers) {
-        TreeNode root = null;
-        for (int number : numbers) {
-            root = insertRec(root, number);
-        }
-        treeRepository.save(root);
-        String[] jsons = convertTreeToJson(root, numbers);
-        saveTreeJson(jsons[0], jsons[1]);
-        return root;
-    }
+        Collections.sort(numbers);
+        TreeNode root = buildBalancedTree(numbers, 0, numbers.size() - 1);
 
-    private TreeNode insertRec(TreeNode root, int value){
-        if (root == null) {
-            return new TreeNode(value);
-        }
-        if (value < root.getValue()) {
-            root.setLeft(insertRec(root.getLeft(), value));
-        } else if (value > root.getValue()) {
-    }
-        return root;
-    }
-
-    private String[] convertTreeToJson(TreeNode root, List<Integer> numbers) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String treeJson = gson.toJson(root);
+    
+        Map<String, TreeNode> rootMap = new HashMap<>();
+        rootMap.put("root", root);
+        String treeJson = gson.toJson(rootMap);
         String userInputsJson = gson.toJson(numbers);
-        return new String[]{treeJson, userInputsJson};
+    
+        saveTreeJson(treeJson, userInputsJson);
+    
+        return root;
+    }
+    
+    private TreeNode buildBalancedTree(List<Integer> nums, int start, int end) {
+        if (start > end) return null;
+    
+        int mid = (start + end) / 2;
+        TreeNode node = new TreeNode(nums.get(mid));
+    
+        node.setLeft(buildBalancedTree(nums, start, mid - 1));
+        node.setRight(buildBalancedTree(nums, mid + 1, end));
+    
+        return node;
     }
 
     private void saveTreeJson(String treeJson, String userInputsJson) {
