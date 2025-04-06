@@ -1,0 +1,48 @@
+body {
+  width: 96%;
+  max-width: 100%;
+  position: relative;
+  height: 96%;
+  background-color: white;
+  max-height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  line-height: normal;
+  margin: 0 auto;
+  padding-left: 20px;
+  z-index: 10;
+}
+
+.main {
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(gray, black);
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main h1 {
+}
+
+.main p {
+}
+
+.main button {
+  border: none;
+  background: darkblue;
+  padding: 6px;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.main-content button:hover {
+  background-color: lightblue;
+}
+
+.main-content .index-button-container button {
+  font-size: 25px;
+  padding: 10px;
+}
