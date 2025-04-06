@@ -2,7 +2,7 @@ body {
   width: 96%;
   max-width: 100%;
   position: relative;
-  height: 96%;
+  height: 98%;
   background-color: white;
   max-height: 100%;
   background-size: cover;
@@ -10,27 +10,41 @@ body {
   background-position: center;
   line-height: normal;
   margin: 0 auto;
-  padding-left: 20px;
+  padding-left: 13px;
+  padding-right: 20px;
   z-index: 10;
 }
 
 .main {
-  width: 100%;
+  width: 96%;
   position: fixed;
-  background: linear-gradient(gray, black);
+  background: repeating-radial-gradient(
+    circle,
+    violet,
+    indigo,
+    blue,
+    green,
+    orange,
+    red
+  );
   height: 100%;
   margin: 0 auto;
 }
 
 .main h1 {
+  text-align: center;
+  color: white;
+  padding-top: 50px;
 }
 
 .main p {
+  text-align: center;
+  color: white;
 }
 
 .main button {
   border: none;
-  background: darkblue;
+  background: blue;
   padding: 6px;
   border-radius: 5px;
   margin-left: 5px;
@@ -38,11 +52,17 @@ body {
   color: white;
 }
 
-.main-content button:hover {
-  background-color: lightblue;
+.arrow {
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 70px;
 }
 
-.main-content .index-button-container button {
-  font-size: 25px;
-  padding: 10px;
+.form {
+  text-align: center;
+  padding-top: 40px;
+  color: white;
 }
