@@ -16,6 +16,11 @@ public class TreeController {
     @Autowired
     TreeService treeService;
 
+    @GetMapping("/")
+    public String home() {
+        return "home";
+    }
+
     @GetMapping("/enter-numbers")
     public String enterNumbers() {
         return "enter-numbers";
