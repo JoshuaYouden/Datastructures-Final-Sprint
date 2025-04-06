@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary Tree Creator</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <script src="./js/index.js" defer></script>
-    <div class="main"></div>
+    <div class="main">
+      <h1>Your Balanced Binary Tree has been created!</h1>
+
+      <p><strong>Your Input:</strong> <span>${userInputs}</span></p>
+
+      <div class="form">
+        <pre id="tree-json" data-tree="${treeJson}"></pre>
+
+        <br />
+        <form action="/enter-numbers">
+          <button type="submit" id="submit-btn">Go Back</button>
+        </form>
+        <form action="/previous-trees">
+          <button type="submit" id="submit-btn">View Previous Trees</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
