@@ -1,0 +1,68 @@
+body {
+  width: 96%;
+  max-width: 100%;
+  position: relative;
+  height: 98%;
+  background-color: white;
+  max-height: 100%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  line-height: normal;
+  margin: 0 auto;
+  padding-left: 13px;
+  padding-right: 20px;
+  z-index: 10;
+}
+
+.main {
+  width: 96%;
+  position: fixed;
+  background: repeating-radial-gradient(
+    circle,
+    violet,
+    indigo,
+    blue,
+    green,
+    orange,
+    red
+  );
+  height: 100%;
+  margin: 0 auto;
+}
+
+.main h1 {
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+}
+
+.main p {
+  text-align: center;
+  color: white;
+}
+
+.main button {
+  border: none;
+  background: blue;
+  padding: 6px;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.arrow {
+  color: white;
+  font-size: 50px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.form {
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+}

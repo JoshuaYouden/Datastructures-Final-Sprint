@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Tree Creator</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/index.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Enter numbers here to create a binary tree!</h1>
+
+      <div class="form">
+        <form method="post" action="/process-numbers" id="number-form">
+          >
+          <input
+            type="text"
+            name="input"
+            id="number-input"
+            placeholder="Enter numbers..."
+            required
+          />
+          <button type="submit" id="submit-btn">Submit</button>
+          <
+        </form>
+        <div class="arrow">^ ^ ^</div>
+
+        <br />
+        <form method="get" action="/previous-trees">
+          <button type="submit" id="submit-btn">Show Previous Trees</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
