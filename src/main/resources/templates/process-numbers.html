@@ -9,20 +9,24 @@
   </head>
   <body>
     <div class="main">
-      <h1>Your Balanced Binary Tree has been created!</h1>
+      <div class="main-inner">
+        <h1>Your Balanced Binary Tree has been created!</h1>
 
-      <p><strong>Your Input:</strong> <span>${userInputs}</span></p>
+        <p>
+          <strong>Your Input:</strong> <span th:text="${userInputs}"></span>
+        </p>
 
-      <div class="form">
-        <pre id="tree-json" data-tree="${treeJson}"></pre>
+        <div class="form">
+          <pre class="tree-json" th:attr="data-tree=${treeJson}"></pre>
 
-        <br />
-        <form action="/enter-numbers">
-          <button type="submit" id="submit-btn">Go Back</button>
-        </form>
-        <form action="/previous-trees">
-          <button type="submit" id="submit-btn">View Previous Trees</button>
-        </form>
+          <br />
+          <form action="/enter-numbers">
+            <button type="submit" id="submit-btn">Go Back</button>
+          </form>
+          <form action="/previous-trees">
+            <button type="submit" id="submit-btn">View Previous Trees</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>

@@ -1,23 +1,13 @@
 body {
-  width: 96%;
-  max-width: 100%;
-  position: relative;
-  height: 98%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: white;
-  max-height: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-  line-height: normal;
-  margin: 0 auto;
-  padding-left: 13px;
-  padding-right: 20px;
-  z-index: 10;
+  overflow-y: auto;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .main {
-  width: 96%;
-  position: fixed;
   background: repeating-radial-gradient(
     circle,
     violet,
@@ -27,42 +17,41 @@ body {
     orange,
     red
   );
-  height: 100%;
+  width: 96%;
+  max-width: 1400px;
   margin: 0 auto;
+  min-height: 100vh;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
 }
 
 .main h1 {
   text-align: center;
-  color: white;
-  padding-top: 50px;
+  margin-bottom: 20px;
 }
 
 .main p {
   text-align: center;
-  color: white;
+  margin: 10px 0;
 }
 
 .main button {
-  border: none;
   background: blue;
-  padding: 6px;
-  border-radius: 5px;
-  margin-left: 5px;
-  cursor: pointer;
   color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .arrow {
-  color: white;
+  text-align: center;
   font-size: 50px;
-  padding: 20px;
-  text-align: center;
+  margin-top: 20px;
   font-weight: bold;
-  font-size: 70px;
-}
-
-.form {
-  text-align: center;
-  padding-top: 40px;
-  color: white;
 }

@@ -9,27 +9,29 @@
   </head>
   <body>
     <div class="main">
-      <h1>Enter numbers here to create a binary tree!</h1>
+      <div class="main-inner">
+        <h1>Enter numbers here to create a binary tree!</h1>
 
-      <div class="form">
-        <form method="post" action="/process-numbers" id="number-form">
-          >
-          <input
-            type="text"
-            name="input"
-            id="number-input"
-            placeholder="Enter numbers..."
-            required
-          />
-          <button type="submit" id="submit-btn">Submit</button>
-          <
-        </form>
-        <div class="arrow">^ ^ ^</div>
+        <div class="form">
+          <form method="post" action="/process-numbers" id="number-form">
+            >
+            <input
+              type="text"
+              name="input"
+              id="number-input"
+              placeholder="Enter numbers..."
+              required
+            />
+            <button type="submit" id="submit-btn">Submit</button>
+            <
+          </form>
+          <div class="arrow">^ ^ ^</div>
 
-        <br />
-        <form method="get" action="/previous-trees">
-          <button type="submit" id="submit-btn">Show Previous Trees</button>
-        </form>
+          <br />
+          <form method="get" action="/previous-trees">
+            <button type="submit" id="submit-btn">Show Previous Trees</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>

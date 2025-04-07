@@ -2,6 +2,7 @@ package com.keyin;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Controller
 public class TreeController {
@@ -31,8 +35,10 @@ public class TreeController {
         try {
             List<Integer> numbers = Arrays.stream(input.split(", ")).map(String::trim).map(Integer::parseInt).collect(Collectors.toList());
             TreeNode root = treeService.createTree(numbers);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String treeJson = gson.toJson(Map.of("root", root));
 
-            model.addAttribute("treeJson", root);
+            model.addAttribute("treeJson", treeJson);
             model.addAttribute("userInputs", input);
 
             return "process-numbers";

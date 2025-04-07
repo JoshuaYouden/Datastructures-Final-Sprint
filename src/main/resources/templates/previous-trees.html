@@ -9,25 +9,27 @@
   </head>
   <body>
     <div class="main">
-      <h1>View Your Previously Created Binary Trees Here!</h1>
+      <div class="main-inner">
+        <h1>View Your Previously Created Binary Trees Here!</h1>
 
-      <div class="form">
-        <form action="/enter-numbers">
-          <button type="submit" id="submit-btn">+ Create New Tree</button>
-        </form>
+        <div class="form">
+          <form action="/enter-numbers">
+            <button type="submit" id="submit-btn">+ Create New Tree</button>
+          </form>
 
-        <hr />
+          <hr />
 
-        <ul>
-          <li th:each="tree : ${trees}">
-            <p>
-              <strong>Input Numbers:</strong>
-              <span th:text="${tree.userInputs}"></span>
-            </p>
-            <pre class="tree-json" th:attr="data-tree=${tree.treeJson}"></pre>
-            <hr />
-          </li>
-        </ul>
+          <ul>
+            <li th:each="tree : ${trees}">
+              <p>
+                <strong>Input Numbers:</strong>
+                <span th:text="${tree.userInputs}"></span>
+              </p>
+              <pre class="tree-json" th:attr="data-tree=${tree.treeJson}"></pre>
+              <hr />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
